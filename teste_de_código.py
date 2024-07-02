@@ -34,11 +34,8 @@ def limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base=None):
         # Adiciona a extensão correta ao novo nome de arquivo
         novo_nome = f"{nome_base}-{'_'.join(colunas_principais)}{extensao}"
         
-        # Obtem o diretório do arquivo original
-        diretorio_original = os.path.dirname(caminho_arquivo)
-        
-        # Gera o caminho completo para o novo arquivo
-        caminho_novo_arquivo = os.path.join(diretorio_original, novo_nome)
+        # Gera o caminho completo para o novo arquivo na pasta "tabelas_limpas"
+        caminho_novo_arquivo = os.path.join('data', 'tabelas_limpas', novo_nome)
 
         # Salva a nova planilha
         if extensao == '.csv':
@@ -56,6 +53,9 @@ def limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base=None):
         print(f"Ocorreu um erro ao processar o arquivo: {e}")
 
 # Exemplo de uso
-caminho_arquivo = r'C:\Users\lipoi\Downloads\Nova pasta\2010-2016-licitacoes.csv'                          #   r'caminho_do_arquivo'
-novo_nome_base = None
-limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base)
+#caminho_arquivo = r'data/arquivos_Brutos/2010-2016-licitacoes.csv'  #Caminho atualizado
+#novo_nome_base = None
+
+
+#chamar função para limpar e gerar planilhas
+#limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base)
