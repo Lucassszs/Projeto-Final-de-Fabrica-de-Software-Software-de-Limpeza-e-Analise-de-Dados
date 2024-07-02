@@ -1,4 +1,4 @@
-from teste_de_código import limpar_e_gerar_planilha
+from limpeza_de_dados import limpar_e_gerar_planilha
 
 def main():
     # Definir caminho dos arquivos de dados
