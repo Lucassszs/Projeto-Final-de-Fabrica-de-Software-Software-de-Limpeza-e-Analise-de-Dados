@@ -51,7 +51,7 @@ def limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base=None):
     
     except Exception as e:
         print(f"Ocorreu um erro ao processar o arquivo: {e}")
-
+        
 # Exemplo de uso
 #caminho_arquivo = r'data/arquivos_Brutos/2010-2016-licitacoes.csv'  #Caminho atualizado
 #novo_nome_base = None
@@ -59,3 +59,4 @@ def limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base=None):
 
 #chamar função para limpar e gerar planilhas
 #limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base)
+        
