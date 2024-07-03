@@ -1,14 +1,25 @@
+import os
 from limpeza_de_dados import limpar_e_gerar_planilha
+from Procurar_Arquivos import listar_arquivos, escolher_arquivos
 
 def main():
-    # Definir caminho dos arquivos de dados
-    caminho_arquivo = r'data/arquivos_Brutos/2010-2016-licitacoes.csv'
-    novo_nome_base = None
+    pasta_arquivos_brutos = 'data/arquivos_Brutos'
+    arquivos = listar_arquivos(pasta_arquivos_brutos)
     
-    # Chama a função de limpeza e geração de planilha
-    limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base)
+    if not arquivos:
+        print("Nenhum arquivo encontrado na pasta.")
     
-    # Adicionar outras funções de análise e coleta de dados aqui
+    arquivos_escolhidos = escolher_arquivos(arquivos, pasta_arquivos_brutos)
+    
+    if not arquivos_escolhidos:
+        print("Nenhum arquivo escolhido.")
+        return
+    
+    for arquivo in arquivos_escolhidos:
+        caminho_arquivo = os.path.join(pasta_arquivos_brutos, arquivo)
+        novo_nome_base = None
+        
+        limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base)
     
     print("Processamento concluído.")
 
