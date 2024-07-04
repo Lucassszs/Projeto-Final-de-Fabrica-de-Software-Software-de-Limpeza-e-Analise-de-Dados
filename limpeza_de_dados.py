@@ -14,6 +14,9 @@ def limpar_e_gerar_planilha(caminho_arquivo, novo_nome_base=None):
         else:
             raise ValueError("Tipo de arquivo não suportado. Use CSV, XLS ou XLSX.")
 
+        # Remove colunas que têm nomes "Unnamed"
+        df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+
         # Identifica as colunas principais (as duas primeiras colunas, por exemplo)
         colunas_principais = df.columns[:2].tolist()
 
